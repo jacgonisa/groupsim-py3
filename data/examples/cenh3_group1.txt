@@ -1,0 +1,5 @@
+# Group 1: Core CENH3
+Group1: lpCarDepa1_lpSchLacu1_SUPER_14_001552.1_CenpA_K11253, R_barbata_hap1_chrs_RHYNC_chr5_RagTag_001408
+Group1: Rhync_corymbosa_6179D.asm.hic.FINAL.hap1.chr_RHYNC_Chr3_h1_001454, R_holoschoenoides_hap1_chr_RHYNC_Chr5_RagTag_h1_001221
+Group1: Rrugosa.chr_RHYNC_chr17_001058, Ralba.chr_RHYNC_Chr4_002329
+Group1: Rhync_ridleyi.asm.hic.hap1.p_ctg.FINAL.chr_RHYNC_HiC_scaffold_5_h1_006657, Rcephalotes.hap1.chr_RHYNC_chr2_h1_000519

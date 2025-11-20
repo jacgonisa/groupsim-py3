@@ -1,0 +1,3 @@
+# Manual groups for synthetic alignment
+Group1: Seq1, Seq2, Seq3, Seq4, Seq5
+Group2: Seq6, Seq7, Seq8, Seq9, Seq10
