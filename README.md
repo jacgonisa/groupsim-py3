@@ -20,7 +20,7 @@ A Python 3 implementation of the GroupSim algorithm for identifying specificity-
 - **Customizable Parameters**: Adjust gap thresholds, window size, and lambda weighting
 
 ### Comprehensive Visualization
-- **Manhattan Plot**: Genome-wide view of SDP scores with Z-score coloring
+- **GroupSim Score Plot**: Position-by-position view of SDP scores with Z-score coloring
 - **Clustered Heatmap**: Hierarchical clustering visualization of sequence similarities
 - **Dendrogram**: Tree-based representation with group cutoff lines
 - **Residue Annotations**: Automatic labeling of high-scoring positions with amino acid changes
@@ -76,7 +76,7 @@ python /path/to/groupsim-py3/src/groupsim.py -t 75.0 your_alignment.fasta
 **Input**: FASTA alignment file
 
 **Output**:
-- `your_alignment_manhattan_plot.png`: SDP score visualization
+- `your_alignment_manhattan_plot.png`: GroupSim score plot visualization
 - `your_alignment_heatmap.png`: Clustered similarity matrix
 - `your_alignment_dendrogram.png`: Hierarchical clustering tree
 - `your_alignment.txt`: Detailed scores and alignment with group annotations
@@ -128,11 +128,11 @@ Performs grid search over window size (`-w`) and lambda (`-l`) parameters to max
 
 ### Synthetic Test Data (Controlled Example)
 
-#### Manhattan Plot - Synthetic Alignment
+#### GroupSim Score Plot - Synthetic Alignment
 
-![Manhattan Plot Synthetic](examples/output/example_manhattan_plot.png)
+![GroupSim Score Plot Synthetic](examples/output/example_manhattan_plot.png)
 
-*Manhattan-style plot from synthetic test alignment with engineered SDPs. Position 15 shows a perfect SDP (Group1: K, Group2: D) with Z-score > 8. Position 25 shows a moderate SDP with mixed residues within groups. Colors represent Z-scores, with red indicating high specificity.*
+*GroupSim score plot from synthetic test alignment with engineered SDPs. Position 15 shows a perfect SDP (Group1: K, Group2: D) with Z-score > 8. Position 25 shows a moderate SDP with mixed residues within groups. Colors represent Z-scores, with red indicating high specificity.*
 
 **Key Features**:
 - **Position 15**: Perfect SDP - all Group1 sequences have K, all Group2 have D
@@ -142,9 +142,9 @@ Performs grid search over window size (`-w`) and lambda (`-l`) parameters to max
 
 ### Real Biological Data (CENH3 Analysis)
 
-#### Manhattan Plot - Centromeric Histone H3 (CENH3)
+#### GroupSim Score Plot - Centromeric Histone H3 (CENH3)
 
-![Manhattan Plot CENH3](examples/output/example_cenh3_manhattan_plot.png)
+![GroupSim Score Plot CENH3](examples/output/example_cenh3_manhattan_plot.png)
 
 *Real-world analysis of CENH3 (centromeric histone H3) sequences from Rhynchospora species. Multiple high-scoring positions (Z > 2.0) are annotated with group-specific residues, revealing positions that may determine functional specificity between CENH3 variants. Black line shows the mean trend across the alignment.*
 
@@ -495,6 +495,6 @@ MIT License - see [LICENSE](LICENSE) file for details
   - Python 3 implementation of GroupSim algorithm
   - Automatic clustering by identity cutoff or target K groups
   - Manual group definition support
-  - Enhanced visualizations (Manhattan plot, heatmap, dendrogram)
+  - Enhanced visualizations (SDP score plot, heatmap, dendrogram)
   - Parameter optimization framework
   - Comprehensive documentation and examples

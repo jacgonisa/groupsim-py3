@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 """
-auto_groupsim_final_v3.py - Automated/Manual GroupSim with Full Visualization and Enhanced Plotting
+groupsim.py - Automated/Manual GroupSim with Full Visualization and Enhanced Plotting
 
 Features:
 1. Automatic Clustering by Identity Cutoff (-t).
 2. Automatic Clustering by Target Number of Groups (-k N).
 3. Manual Group Definition via file (-k filename) - Unlisted sequences become 'Other'.
-4. Visualization: Clustered Heatmap, Dendrogram, and Manhattan Plot.
-5. Manhattan Plot Annotation: Includes position and residue consensus (e.g., G1:A/T | Other:S).
-6. Enhanced Manhattan Plot Legend: Uses a gradient color bar for Z-scores.
+4. Visualization: Clustered Heatmap, Dendrogram, and GroupSim Score Plot.
+5. Score Plot Annotation: Includes position and residue consensus (e.g., G1:A/T | Other:S).
+6. Enhanced Score Plot Legend: Uses a gradient color bar for Z-scores.
 
 Requires: biopython, numpy, pandas, scipy, matplotlib, seaborn
 """
@@ -373,7 +373,7 @@ def get_residue_consensus(col_residues):
 
 def plot_groupsim_manhattan(scores, alignment, gids_to_seqs, output_name, threshold=2.0):
     """
-    Generates and saves a Manhattan-style plot of GroupSim scores, 
+    Generates and saves a GroupSim score plot showing SDP scores across alignment positions,
     annotating sites with the residue change, and using a gradient Z-score legend.
     """
     
@@ -449,7 +449,7 @@ def plot_groupsim_manhattan(scores, alignment, gids_to_seqs, output_name, thresh
     plt.tight_layout()
     plt.savefig(fig_name, bbox_inches='tight', dpi=300)
     plt.close()
-    print(f"Wrote Manhattan-style score plot to {fig_name}.", file=sys.stderr)
+    print(f"Wrote GroupSim score plot to {fig_name}.", file=sys.stderr)
 
 def write_detailed_output(score_file, names, alignment, scores, gids_to_seqs, group_ids, final_identity_cutoff):
     """Writes a detailed, column-by-column report."""
