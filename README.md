@@ -137,6 +137,31 @@ Performs grid search over window size (`-w`) and lambda (`-l`) parameters to max
 - **Low scores (blue)**: Either universally conserved or highly variable within groups
 - **Annotations**: Show residue consensus per group at significant positions (e.g., "Group1:K | Group2:D")
 
+### Clustered Heatmap with Dendrogram
+
+![Clustered Heatmap](examples/output/example_heatmap.png)
+
+*Hierarchical clustering heatmap showing pairwise sequence similarities. Dendrograms on the top and left show the clustering tree structure. The color scale represents percent identity (yellow = high similarity, purple = low similarity). Sequences naturally cluster into functional groups.*
+
+**Interpretation**:
+- **Yellow blocks**: Groups of highly similar sequences (same functional subfamily)
+- **Purple regions**: Divergent sequences or between-group comparisons
+- **Dendrogram structure**: Branch lengths indicate evolutionary/sequence distance
+- **Natural clusters**: Visual identification of functional groups
+
+### Dendrogram with Group Cutoff
+
+![Dendrogram](examples/output/example_dendrogram.png)
+
+*Hierarchical clustering dendrogram showing sequence relationships. The red dashed line indicates the identity cutoff used for group assignment. The top axis shows percent identity, bottom axis shows distance (1 - identity/100). Sequences clustering below the cutoff line belong to the same functional group.*
+
+**Interpretation**:
+- **Clusters below cutoff**: Sequences in the same group
+- **Branch colors**: Different colors after cutoff indicate different groups
+- **Branch lengths**: Longer branches = greater sequence divergence
+- **Dual axes**: View as either distance or percent identity
+- **Cutoff selection**: Red line shows the threshold determining group boundaries
+
 ## Methodology
 
 ### GroupSim Score Formula
