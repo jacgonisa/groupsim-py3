@@ -126,39 +126,56 @@ Performs grid search over window size (`-w`) and lambda (`-l`) parameters to max
 
 ## Example Outputs
 
-### Manhattan Plot with Residue Annotations
+### Synthetic Test Data (Controlled Example)
 
-![Manhattan Plot](examples/output/example_manhattan_plot.png)
+#### Manhattan Plot - Synthetic Alignment
 
-*Manhattan-style plot showing GroupSim scores across alignment positions. High-scoring positions (Z > 2.0) are annotated with group-specific residues. Colors represent Z-scores, with red indicating high specificity.*
+![Manhattan Plot Synthetic](examples/output/example_manhattan_plot.png)
 
-**Interpretation**:
-- **High peaks (red)**: Strong SDPs - positions highly conserved within groups but different between groups
-- **Low scores (blue)**: Either universally conserved or highly variable within groups
-- **Annotations**: Show residue consensus per group at significant positions (e.g., "Group1:K | Group2:D")
+*Manhattan-style plot from synthetic test alignment with engineered SDPs. Position 15 shows a perfect SDP (Group1: K, Group2: D) with Z-score > 8. Position 25 shows a moderate SDP with mixed residues within groups. Colors represent Z-scores, with red indicating high specificity.*
 
-### Clustered Heatmap with Dendrogram
+**Key Features**:
+- **Position 15**: Perfect SDP - all Group1 sequences have K, all Group2 have D
+- **Position 5**: Conserved position (all A) - score near zero
+- **Position 25**: Moderate SDP - some within-group variation
+- Demonstrates how GroupSim distinguishes true SDPs from noise
+
+### Real Biological Data (CENH3 Analysis)
+
+#### Manhattan Plot - Centromeric Histone H3 (CENH3)
+
+![Manhattan Plot CENH3](examples/output/example_cenh3_manhattan_plot.png)
+
+*Real-world analysis of CENH3 (centromeric histone H3) sequences from Rhynchospora species. Multiple high-scoring positions (Z > 2.0) are annotated with group-specific residues, revealing positions that may determine functional specificity between CENH3 variants. Black line shows the mean trend across the alignment.*
+
+**Biological Interpretation**:
+- **High peaks (red)**: Candidate specificity-determining positions in CENH3
+- **Clustered peaks**: Functional domains or binding interfaces
+- **Annotations**: Show actual amino acid changes between CENH3 groups (e.g., "Group_1:V/I | Other:A/T")
+- Demonstrates GroupSim on real protein family data with biological relevance
+
+#### Clustered Heatmap with Dendrogram
 
 ![Clustered Heatmap](examples/output/example_heatmap.png)
 
-*Hierarchical clustering heatmap showing pairwise sequence similarities. Dendrograms on the top and left show the clustering tree structure. The color scale represents percent identity (yellow = high similarity, purple = low similarity). Sequences naturally cluster into functional groups.*
+*Hierarchical clustering heatmap from CENH3 analysis showing pairwise sequence similarities. Dendrograms on the top and left show the clustering tree structure. The color scale represents percent identity (yellow = high similarity, purple = low similarity). Sequences naturally cluster into CENH3 variant groups.*
 
 **Interpretation**:
-- **Yellow blocks**: Groups of highly similar sequences (same functional subfamily)
+- **Yellow blocks**: Groups of highly similar CENH3 sequences (same variant/species)
 - **Purple regions**: Divergent sequences or between-group comparisons
 - **Dendrogram structure**: Branch lengths indicate evolutionary/sequence distance
-- **Natural clusters**: Visual identification of functional groups
+- **Natural clusters**: Visual identification of CENH3 functional groups
 
-### Dendrogram with Group Cutoff
+#### Dendrogram with Group Cutoff
 
 ![Dendrogram](examples/output/example_dendrogram.png)
 
-*Hierarchical clustering dendrogram showing sequence relationships. The red dashed line indicates the identity cutoff used for group assignment. The top axis shows percent identity, bottom axis shows distance (1 - identity/100). Sequences clustering below the cutoff line belong to the same functional group.*
+*Hierarchical clustering dendrogram from CENH3 analysis showing sequence relationships. The red dashed line indicates the identity cutoff used for group assignment. The top axis shows percent identity, bottom axis shows distance (1 - identity/100). Sequences clustering below the cutoff line belong to the same functional group.*
 
 **Interpretation**:
-- **Clusters below cutoff**: Sequences in the same group
-- **Branch colors**: Different colors after cutoff indicate different groups
-- **Branch lengths**: Longer branches = greater sequence divergence
+- **Clusters below cutoff**: CENH3 sequences in the same variant group
+- **Branch colors**: Different colors after cutoff indicate different CENH3 variants
+- **Branch lengths**: Longer branches = greater sequence divergence between variants
 - **Dual axes**: View as either distance or percent identity
 - **Cutoff selection**: Red line shows the threshold determining group boundaries
 
