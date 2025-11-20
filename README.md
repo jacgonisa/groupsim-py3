@@ -448,7 +448,7 @@ If you use GroupSim-Py3 in your research, please cite both this implementation a
 ### This Implementation
 
 ```
-González, J. (2025). GroupSim-Py3: Python 3 Implementation of the GroupSim Algorithm for SDP Detection.
+Gonzalez, J. (2025). GroupSim-Py3: Python 3 Implementation of the GroupSim Algorithm for SDP Detection.
 GitHub: https://github.com/jacgonisa/groupsim-py3
 ```
 
@@ -473,7 +473,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## Contact
 
-- **Author**: Javier González
+- **Author**: Jacob Gonzalez
 - **GitHub**: [@jacgonisa](https://github.com/jacgonisa)
 - **Repository**: https://github.com/jacgonisa/groupsim-py3
 
@@ -486,7 +486,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 ## Acknowledgments
 
 - Original GroupSim algorithm: John Capra and Mona Singh (Princeton University)
-- Python 3 implementation and extensions: Javier González
+- Python 3 implementation and extensions: Jacob Gonzalez
 - Developed for comparative genomics and phylogenomics studies
 
 ## Version History
